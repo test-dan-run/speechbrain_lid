@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  local:
+    stdin_open: true
+    tty: true
+    image: speechbrain:v0.5.11
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
+    ports:
+      - 6006:6006
+    volumes:
+      - /mnt/c/projects/speechbrain_lid:/workspace
+      - /mnt/c/datasets:/datasets:z
+    ulimits:
+      memlock: -1
+      stack: 67108864
+    shm_size: 16gb
+    command: python3 local_train.py
+
+  tensorboard:
+    stdin_open: true
+    tty: true
+    image: speechbrain:v0.5.11
+    ports:
+      - 6006:6006
+    volumes:
+      - /mnt/c/projects/speechbrain_lid/results:/logs
+    command: tensorboard --logdir /logs --host 0.0.0.0 --port 6006
