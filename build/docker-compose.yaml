@@ -4,7 +4,7 @@ services:
   local:
     stdin_open: true
     tty: true
-    image: speechbrain:v0.5.11
+    image: dleongsh/speechbrain:v0.5.11
     deploy:
       resources:
         reservations:
@@ -13,8 +13,8 @@ services:
     ports:
       - 6006:6006
     volumes:
-      - /mnt/c/projects/speechbrain_lid:/workspace
-      - /mnt/c/datasets:/datasets:z
+      - /home/daniel/projects/speechbrain_lid:/workspace
+      - /home/daniel/datasets:/datasets:z
     ulimits:
       memlock: -1
       stack: 67108864
