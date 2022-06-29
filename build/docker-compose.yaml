@@ -4,7 +4,7 @@ services:
   local:
     stdin_open: true
     tty: true
-    image: speechbrain:v0.5.11
+    image: dleongsh/speechbrain:v0.5.11
     deploy:
       resources:
         reservations:

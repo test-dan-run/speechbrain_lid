@@ -1,4 +1,4 @@
-# docker build -t speechbrain:v0.5.11 .
+# docker build -t dleongsh/speechbrain:v0.5.11 .
 
 #use the base package for from official pytorch source 
 FROM pytorch/pytorch:1.8.1-cuda11.1-cudnn8-runtime
