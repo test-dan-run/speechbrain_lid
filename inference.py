@@ -1,5 +1,4 @@
 import os
-import torch
 import subprocess
 from typing import Union, List
 from speechbrain.pretrained import EncoderClassifier
